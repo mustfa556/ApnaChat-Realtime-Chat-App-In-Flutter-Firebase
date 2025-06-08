@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_notification_channel/flutter_notification_channel.dart';
 import 'package:flutter_notification_channel/notification_importance.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart'; // ✅ الاستيراد الجديد
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+// ✅ استيراد جديد للحفظ في المعرض (تأكد إنك ستستخدمه لاحقًا)
+import 'package:image_gallery_saver_plus/image_gallery_saver_plus.dart';
 
 import 'firebase_options.dart';
 import 'screens/splash_screen.dart';
@@ -25,7 +28,7 @@ Future<void> main() async {
 
   // تهيئة Firebase + الإشعارات
   await _initializeFirebase();
-  await _initializeLocalNotifications(); // ✅ تهيئة الإشعارات
+  await _initializeLocalNotifications();
 
   // تحديد الوضع الرأسي فقط
   SystemChrome.setPreferredOrientations(
@@ -74,7 +77,6 @@ Future<void> _initializeFirebase() async {
   log('\nNotification Channel Result: $result');
 }
 
-// ✅ تهيئة flutter_local_notifications
 Future<void> _initializeLocalNotifications() async {
   const AndroidInitializationSettings initializationSettingsAndroid =
       AndroidInitializationSettings('@mipmap/ic_launcher');
@@ -85,10 +87,9 @@ Future<void> _initializeLocalNotifications() async {
   await flutterLocalNotificationsPlugin.initialize(initializationSettings);
 }
 
-// ✅ دالة لعرض إشعار (يمكنك استدعاؤها لاحقًا من أي مكان)
 Future<void> showLocalNotification() async {
   const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
-    'chats', // يجب أن يطابق ID القناة التي سجلتها
+    'chats',
     'Chats',
     channelDescription: 'For Showing Message Notification',
     importance: Importance.max,
@@ -105,3 +106,5 @@ Future<void> showLocalNotification() async {
     platformDetails,
   );
 }
+
+// ✅ لاحقًا يمكنك استخدام ImageGallerySaverPlus.saveImage(...) من أي مكان
