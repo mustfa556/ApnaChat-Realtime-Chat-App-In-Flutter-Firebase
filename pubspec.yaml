@@ -49,9 +49,14 @@ dependencies:
   # For creating notification channel
   flutter_local_notifications: ^17.1.2
 
-  # For storing images into gallery
-  # gallery_saver_updated: ^3.0.0
-  gallery_saver_plus: ^3.2.1
+  # ✅ New: For saving images to gallery
+  image_gallery_saver: ^2.0.3
+
+  # ✅ New: To request storage permission
+  permission_handler: ^10.0.0
+
+  # ✅ New: For downloading images from URL (optional)
+  dio: ^6.0.0
 
   # For Playing Lottie Animation
   lottie: ^3.2.0
@@ -66,7 +71,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  #   flutter_launcher_icons: "^0.10.0"
+  # flutter_launcher_icons: "^0.10.0"
 
   # flutter_icons:
   #   android: "ic_launcher"
@@ -79,10 +84,8 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
 flutter:
-  # For enabling material design
   uses-material-design: true
 
-  # App Assets
   assets:
     - assets/
     - assets/images/
