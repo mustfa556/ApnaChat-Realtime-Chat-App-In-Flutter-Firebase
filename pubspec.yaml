@@ -1,4 +1,4 @@
-name: we_chat
+name: memo chat
 description: "A Chatting App Developed by Harsh H. Rajpurohit (Google Me)"
 publish_to: "none"
 version: 1.0.2+2
@@ -47,7 +47,7 @@ dependencies:
   http: ^1.2.2
 
   # For creating notification channel
-  flutter_notification_channel: ^3.1.0
+  flutter_local_notifications: ^17.1.2
 
   # For storing images into gallery
   # gallery_saver_updated: ^3.0.0
