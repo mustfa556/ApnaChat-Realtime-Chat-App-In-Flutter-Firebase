@@ -50,8 +50,8 @@ dependencies:
   flutter_local_notifications: ^17.1.2
 
   # ✅ New: For saving images to gallery
-  image_gallery_saver: ^1.7.1
-
+  image_gallery_saver: ^4.0.1
+  
   # ✅ New: To request storage permission
   permission_handler: ^10.0.0
 
