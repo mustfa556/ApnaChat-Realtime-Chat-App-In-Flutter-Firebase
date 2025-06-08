@@ -56,7 +56,7 @@ dependencies:
   permission_handler: ^10.0.0
 
   # ✅ New: For downloading images from URL (optional)
-  dio: ^6.0.0
+  dio: ^5.8.0+1
 
   # For Playing Lottie Animation
   lottie: ^3.2.0
