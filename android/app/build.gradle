@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "com.harshRajpurohit.we_chat"
+    namespace = "com.harshRajpurohit.memo_chat"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
