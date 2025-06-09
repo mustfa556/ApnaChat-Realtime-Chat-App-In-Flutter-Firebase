@@ -10,8 +10,7 @@ plugins {
     id 'dev.flutter.flutter-gradle-plugin'
 }
 
-android {
-    namespace "com.harshRajpurohit.memo_chat"
+android {    namespace "com.harshRajpurohit.we_chat"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
