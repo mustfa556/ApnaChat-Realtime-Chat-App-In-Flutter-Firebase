@@ -3,8 +3,6 @@ import 'dart:developer';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_notification_channel/flutter_notification_channel.dart';
-import 'package:flutter_notification_channel/notification_importance.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 // ✅ استيراد جديد للحفظ في المعرض (تأكد إنك ستستخدمه لاحقًا)
@@ -66,15 +64,7 @@ class MyApp extends StatelessWidget {
 
 Future<void> _initializeFirebase() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
-  var result = await FlutterNotificationChannel().registerNotificationChannel(
-    description: 'For Showing Message Notification',
-    id: 'chats',
-    importance: NotificationImportance.IMPORTANCE_HIGH,
-    name: 'Chats',
-  );
-
-  log('\nNotification Channel Result: $result');
+  log('\nFirebase Initialized');
 }
 
 Future<void> _initializeLocalNotifications() async {
@@ -85,6 +75,21 @@ Future<void> _initializeLocalNotifications() async {
       InitializationSettings(android: initializationSettingsAndroid);
 
   await flutterLocalNotificationsPlugin.initialize(initializationSettings);
+
+  // إنشاء قناة إشعار يدويًا
+  const AndroidNotificationChannel channel = AndroidNotificationChannel(
+    'chats', // id
+    'Chats', // name
+    description: 'For Showing Message Notification',
+    importance: Importance.high,
+  );
+
+  await flutterLocalNotificationsPlugin
+      .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin>()
+      ?.createNotificationChannel(channel);
+
+  log('Notification Channel created manually');
 }
 
 Future<void> showLocalNotification() async {
