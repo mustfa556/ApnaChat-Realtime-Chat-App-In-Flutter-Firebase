@@ -11,7 +11,7 @@ plugins {
 }
 
 android {
-    namespace = "com.harshRajpurohit.memo_chat"
+    namespace "com.harshRajpurohit.memo_chat"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
