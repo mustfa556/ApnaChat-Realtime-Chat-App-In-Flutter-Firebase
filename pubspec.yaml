@@ -32,7 +32,6 @@ dependencies:
 
   # Notifications
   flutter_local_notifications: ^17.1.2
-  flutter_notification_channel: ^2.0.0
 
   # ✅ Replaced: Correct package to save images
   image_gallery_saver: ^2.0.3
